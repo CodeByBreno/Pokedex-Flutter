@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:my_first_app/Widgets/notifier.dart';
-import 'package:my_first_app/Widgets/recepters.dart';
-import 'package:my_first_app/Widgets/auxiliary.dart';
+import 'package:my_first_app/notifier.dart';
+import 'package:my_first_app/auxiliary.dart';
+import 'package:my_first_app/recepters.dart';
 import 'package:my_first_app/Widgets/pokemon_card.dart';
 
 class PokemonGrid extends StatelessWidget {
@@ -17,11 +17,13 @@ class PokemonGrid extends StatelessWidget {
       return const Center(child: CircularProgressIndicator());
     }
 
-    List<Pokemon> _pokemons = pageNotifier.pokemons?.results ?? [];
+    if (pageNotifier.pokemons == null) {
+      throw Exception('Erro na listagem de pokemons');
+    }
 
-    List<String> _items = _pokemons.map((pokemon) => pokemon.name).toList();
+    List<Pokemon> _pokemons = pageNotifier.pokemons!.results;
     
-    List<List<String>> pages = getPages(_items, itemsPerPage);
+    List<List<Pokemon>> pages = getPages(_pokemons, itemsPerPage);
 
     return PageView.builder(
       onPageChanged: (pageIndex) => {
@@ -33,8 +35,10 @@ class PokemonGrid extends StatelessWidget {
             crossAxisCount: 3,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            children: pages[pageIndex].map( (item) {
-                return PokemonCard(index: item);
+            children: pages[pageIndex].map( (pokemon) {
+                return PokemonCard(
+                  name: pokemon.name, 
+                  imageUrl: pokemon.imageUrl);
             }).toList()
         );
       }

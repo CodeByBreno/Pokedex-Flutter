@@ -1,9 +1,10 @@
 import 'Widgets/Utils/input_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:my_first_app/Widgets/notifier.dart';
+import 'package:my_first_app/notifier.dart';
 import 'package:my_first_app/Widgets/pokemon_grid.dart';
 import 'package:my_first_app/Widgets/Utils/page_counter.dart';
+
 
 void main() {
   runApp(

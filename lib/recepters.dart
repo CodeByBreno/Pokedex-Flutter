@@ -14,10 +14,21 @@ class PokemonList {
 class Pokemon {
   final String name;
   final String url;
+  String? _imageUrl;
 
-  Pokemon({ required this.name, required this.url });
+  Pokemon({ 
+    required this.name, 
+    required this.url,
+  });
 
+  String get imageUrl => _imageUrl ?? '';
+
+  set imageUrl(String imageUrl) {
+    _imageUrl = imageUrl;
+  }
+  
   factory Pokemon.fromJson(Map<String, dynamic> json) {
     return Pokemon(name: json['name'], url: json['url']);
   }
+
 }

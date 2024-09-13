@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:my_first_app/Widgets/notifier.dart';
+import 'package:my_first_app/notifier.dart';
 
 class PageCounter extends StatelessWidget {
   @override

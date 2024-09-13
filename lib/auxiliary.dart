@@ -1,9 +1,9 @@
-List<List<String>> getPages(List<String> _items, int itemsPerPage) {
-  List<List<String>> pages = [];
+List<List<T>> getPages<T>(List<T> items, int itemsPerPage) {
+  List<List<T>> pages = [];
 
-  for (int i = 0; i < _items.length; i += itemsPerPage) {
-    int end = (i + itemsPerPage < _items.length) ? i + itemsPerPage : _items.length;
-    pages.add(_items.sublist(i, end));
+  for (int i = 0; i < items.length; i += itemsPerPage) {
+    int end = (i + itemsPerPage < items.length) ? i + itemsPerPage : items.length;
+    pages.add(items.sublist(i, end));
   }
 
   return pages;
