@@ -10,10 +10,11 @@ class PokemonGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     final pageNotifier = Provider.of<PageNotifier>(context);
 
-    if (pageNotifier.pokemons == null) {
-      pageNotifier.fetchData();
-      return const Center(child: CircularProgressIndicator());
-    }
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (pageNotifier.pokemons == null) {
+        pageNotifier.fetchData();
+      }
+    });
 
     if (pageNotifier.error.isNotEmpty) {
       return Center(child: Text(pageNotifier.error));
