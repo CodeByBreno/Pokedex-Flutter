@@ -1,5 +1,5 @@
 class PokemonList {
-  final List<Pokemon> results;
+  List<Pokemon> results;
   final int length;
 
   PokemonList({ required this.results, required this.length });

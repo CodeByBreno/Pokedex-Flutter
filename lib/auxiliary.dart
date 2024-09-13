@@ -8,3 +8,11 @@ List<List<T>> getPages<T>(List<T> items, int itemsPerPage) {
 
   return pages;
 }
+
+String upperFirstLetter(String input) {
+  return input[0].toUpperCase() + input.substring(1);
+}
+
+String padronizeNumberFormat(int number) {
+  return number.toString().padLeft(3, '0');
+}

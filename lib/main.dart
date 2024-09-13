@@ -2,9 +2,13 @@ import 'Widgets/Utils/input_text.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:my_first_app/notifier.dart';
+import 'package:my_first_app/Widgets/Utils/title.dart';
 import 'package:my_first_app/Widgets/pokemon_grid.dart';
 import 'package:my_first_app/Widgets/Utils/page_counter.dart';
 
+
+const ITEMS_PER_PAGE = 15;
+const CACHE_PAGES = 3;
 
 void main() {
   runApp(
@@ -35,7 +39,8 @@ class MyAppState extends State<MyApp> {
             ),
           child: Column(
             children: [
-              InputText(input: 'Pesquise pelo nome do pokemon'),
+              MyTitle(),
+              const InputText(input: 'Pesquise pelo nome do pokemon'),
               Expanded(child: 
                 PokemonGrid()),
               PageCounter(),

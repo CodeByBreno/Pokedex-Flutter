@@ -17,7 +17,7 @@ class InputTextState extends State<InputText> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 214, 214, 214),
+        color: Color.fromARGB(255, 235, 235, 235),
         borderRadius: BorderRadius.circular(12.0),
       ),
       width: 500,
