@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:my_first_app/main.dart';
+import 'package:my_first_app/auxiliary.dart';
 import 'package:my_first_app/recepters.dart';
 
 class PageNotifier extends ChangeNotifier {
@@ -51,27 +52,48 @@ class PageNotifier extends ChangeNotifier {
       }
 
       var jsonResponse = json.decode(response.body);
-      PokemonList pokemons = PokemonList.fromJson(jsonResponse);
+      PokemonList pokemonList = PokemonList.fromJson(jsonResponse);
 
-      final jsonDataList = await Future.wait(
-        pokemons.results.map((pokemon) {
+      final jsonBasicData = await Future.wait(
+        pokemonList.results.map((pokemon) {
           return http.get(Uri.parse(pokemon.url));
         }).toList(),
       );
 
-      if (jsonDataList.any((response) => response.statusCode != 200)) {
+      if (jsonBasicData.any((response) => response.statusCode != 200)) {
         throw Exception('Erro na requisição de dados específicos de algum pokemon');
       }
 
-      final List<Map<String, dynamic>> datalist = jsonDataList
+      final List<Map<String, dynamic>> basicData = jsonBasicData
           .map((e) => jsonDecode(e.body) as Map<String, dynamic>)
           .toList();
 
-      for (int i = 0; i < pokemons.length; i++) {
-        pokemons.results[i].imageUrl = datalist[i]['sprites']['other']['official-artwork']['front_default'] ?? '';
+      for (int i = 0; i < pokemonList.length; i++) {
+        pokemonList.results[i].id = basicData[i]['id'];
+        pokemonList.results[i].imageUrl = basicData[i]['sprites']['other']['official-artwork']['front_default'] ?? '';
+        pokemonList.results[i].imageFrontDefault = basicData[i]['sprites']['front_default'] ?? '';
+        pokemonList.results[i].types = 
+          (basicData[i]['types'] as List<dynamic>)
+          .map((e) => e['type']['name'] as String)
+          .toList();
+        pokemonList.results[i].height = (basicData[i]['height'] as int).toDouble();
+        pokemonList.results[i].weight = (basicData[i]['weight'] as int).toDouble();
       }
 
-      return pokemons;
+      final jsonSpecieData = await Future.wait(
+        pokemonList.results.map((pokemon) {
+          return http.get(Uri.parse('https://pokeapi.co/api/v2/pokemon-species/${pokemon.id}'));
+        }).toList(),
+      );
+
+      final List<Map<String, dynamic>> specieData = jsonSpecieData
+          .map((e) => jsonDecode(e.body) as Map<String, dynamic>)
+          .toList();
+
+      for (int i = 0; i < pokemonList.length; i++) {
+        pokemonList.results[i].generation = getGeneration(specieData[i]['generation']['name'] as String);
+      }
+      return pokemonList;
     } catch (e) {
       debugPrint('Erro ao obter pokémons: $e');
       rethrow; // Propaga o erro para ser tratado no nível superior

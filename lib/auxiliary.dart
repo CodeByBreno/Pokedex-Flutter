@@ -16,3 +16,40 @@ String upperFirstLetter(String input) {
 String padronizeNumberFormat(int number) {
   return number.toString().padLeft(3, '0');
 }
+
+int getGeneration(String generation) {
+  switch (generation) {
+    case 'generation-i':
+      return 1;
+    case 'generation-ii':
+      return 2;
+    case 'generation-iii':
+      return 3;
+    case 'generation-iv':
+      return 4;
+    case 'generation-v':
+      return 5;
+    case 'generation-vi':
+      return 6;
+    case 'generation-vii':
+      return 7;
+    case 'generation-viii':
+      return 8;
+    case 'generation-ix':
+      return 9;
+    case 'generation-x':
+      return 10;
+    case 'generation-xi':
+      return 11;
+    case 'generation-xii':
+      return 12;
+    case 'generation-xiii':
+      return 13;
+    case 'generation-xiv':
+      return 14;
+    case 'generation-xv':
+      return 15;
+    default:
+      return -1;
+  };
+}
