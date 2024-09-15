@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/routes.dart';
 import 'package:my_first_app/recepters.dart';
 import 'package:my_first_app/Widgets/pokemon_card.dart';
 
@@ -13,10 +14,11 @@ class PressablePokemonCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
+        Navigator.pushNamed(
           context, 
-          MaterialPageRoute(builder: (context) => Text('teste')),
-          );
+          myRoutes.details,
+          arguments: pokemon
+        );
       },
       child: PokemonCard(pokemon: pokemon),
     );

@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               MyTitle(),
               const InputText(input: 'Pesquise pelo nome do pokemon'),
-              Expanded(child: 
+              const Expanded(child: 
                 PokemonGrid()),
               PageCounter(),
             ]),

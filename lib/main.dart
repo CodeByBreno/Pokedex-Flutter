@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/home.dart';
 import 'package:provider/provider.dart';
+import 'package:my_first_app/routes.dart';
 import 'package:my_first_app/notifier.dart';
 
 const ITEMS_PER_PAGE = 15;
@@ -25,7 +26,8 @@ class MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pokedex',
-      home: HomeScreen(),
+      initialRoute: '/',
+      routes: routes(context),
     );
   }
 }
