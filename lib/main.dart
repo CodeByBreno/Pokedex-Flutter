@@ -28,6 +28,7 @@ class MyAppState extends State<MyApp> {
       title: 'Pokedex',
       initialRoute: '/',
       routes: routes(context),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

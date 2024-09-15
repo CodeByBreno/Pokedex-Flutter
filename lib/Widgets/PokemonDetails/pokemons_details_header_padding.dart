@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Widgets/Utils/PokemonDetails/pokemons_details_header.dart';
+import 'package:my_first_app/Widgets/PokemonDetails/pokemons_details_header.dart';
 
 class PokemonDetailsHeaderPadding extends StatelessWidget{
   final String name;

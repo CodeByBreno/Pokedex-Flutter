@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/home.dart';
-import 'package:my_first_app/Widgets/Utils/PokemonDetails/pokemon_details.dart';
+import 'package:my_first_app/Widgets/PokemonDetails/pokemon_details.dart';
 
 dynamic routes(BuildContext context) {
   return(

@@ -68,3 +68,7 @@ Color getColorFromType(String type){
       return Color.fromARGB(255, 255, 248, 189);
   }
 }
+
+Color lightenColor(Color color, [double amount = 0.3]) {
+  return Color.lerp(color, Colors.white, amount)!;
+}
