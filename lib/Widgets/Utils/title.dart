@@ -15,6 +15,7 @@ class MyTitle extends StatelessWidget {
         child: Text(
             'Pokedéx',
             style: TextStyle(
+              fontFamily: 'MonoSans',
               fontSize: 32,
               fontWeight: FontWeight.bold),
         )

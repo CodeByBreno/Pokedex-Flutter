@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/main.dart';
 import 'package:provider/provider.dart';
 import 'package:my_first_app/notifier.dart';
 import 'package:my_first_app/recepters.dart';
-import 'package:my_first_app/Widgets/pokemon_card.dart';
+import 'package:my_first_app/Widgets/pressable_pokemon_card.dart';
 
 class PokemonGrid extends StatelessWidget {
+  const PokemonGrid({super.key});
+
   @override
   Widget build(BuildContext context) {
     final pageNotifier = Provider.of<PageNotifier>(context);
@@ -24,7 +25,7 @@ class PokemonGrid extends StatelessWidget {
       return const Center(child: Text('No data found'));
     }
 
-    List<Pokemon> _pokemons = pageNotifier.pokemons!.results;
+    List<Pokemon> pokemons = pageNotifier.pokemons!.results;
 
     return PageView.builder(
       onPageChanged: (pageIndex) {
@@ -34,17 +35,14 @@ class PokemonGrid extends StatelessWidget {
       itemBuilder: (context, pageIndex) {
         return GridView.count(
           crossAxisCount: 2,
-          crossAxisSpacing: 10,
+          crossAxisSpacing: 4,
           mainAxisSpacing: 10,
           childAspectRatio: 3/4,
           children: List.generate(
-            _pokemons.length, 
+            pokemons.length, 
             (index) {
-              int pokemonNumber = pageIndex * ITEMS_PER_PAGE + index;
-              return PokemonCard(
-                name: _pokemons[index].name,
-                imageUrl: _pokemons[index].imageUrl,
-                index: pageNotifier.currentPage * ITEMS_PER_PAGE + index
+              return PressablePokemonCard(
+                pokemon: pokemons[index],
               );
             })
         );

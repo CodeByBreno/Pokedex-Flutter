@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 List<List<T>> getPages<T>(List<T> items, int itemsPerPage) {
   List<List<T>> pages = [];
 
@@ -51,5 +53,18 @@ int getGeneration(String generation) {
       return 15;
     default:
       return -1;
-  };
+  }
+}
+
+Color getColorFromType(String type){
+  switch(type) {
+    case 'fire':
+      return Color.fromARGB(255, 251, 108, 108);
+    case 'water':
+      return Color.fromARGB(255, 118, 189, 254);
+    case 'grass':
+      return Color.fromARGB(255, 70, 209, 177);
+    default:
+      return Color.fromARGB(255, 255, 248, 189);
+  }
 }

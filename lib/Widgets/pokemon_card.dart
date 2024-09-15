@@ -1,58 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/auxiliary.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:my_first_app/recepters.dart';
+import 'package:my_first_app/Widgets/pokemon_image.dart';
+import 'package:my_first_app/Widgets/pokemon_description.dart';
 
 class PokemonCard extends StatefulWidget {
-  final String name;
-  final String imageUrl;
-  final int index;
+  final Pokemon pokemon;
 
   const PokemonCard({
     Key? key,
-    required this.name,
-    required this.imageUrl,
-    required this.index,
+    required this.pokemon,
   }): super(key: key);
 
   @override
-  _PokemonCardState createState() => _PokemonCardState();
+  PokemonCardState createState() => PokemonCardState();
 }
 
-class _PokemonCardState extends State<PokemonCard> {
+class PokemonCardState extends State<PokemonCard> {
   @override
   Widget build(BuildContext context) {
+    final pokemon = widget.pokemon;
     
     return Card(
-          color: Color.fromARGB(255, 224, 255, 242),
+          color: getColorFromType(pokemon.types[0]),
           elevation: 2,
           child: Padding(
-            padding: EdgeInsets.all(5),
+            padding: const EdgeInsets.all(5),
             child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
                 const SizedBox(height: 5.0),
-                Flexible(
-                  child: CachedNetworkImage(
-                    imageUrl: widget.imageUrl != '' ? widget.imageUrl : 'https://jangada.ag/wp-content/uploads/2017/04/jangada-v2-baby-do-brasil-7-capa-quadrada.jpg',
-                    placeholder: (context, url) => const CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => const Icon(Icons.error),
-                    fit: BoxFit.cover)
-                ),
+                Flexible( child: PokemonImage(imageUrl: pokemon.imageUrl)),
                 const SizedBox(height: 4.0),
-                Text(
-                  upperFirstLetter(widget.name),
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    )
-                  ),
-                Text(
-                  padronizeNumberFormat(widget.index),
-                  style: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 15,
-                    )
-                ),
+                PokemonDescription(name: pokemon.name, id: pokemon.id),
               ],
             ),
           ),

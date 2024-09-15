@@ -17,16 +17,23 @@ class InputTextState extends State<InputText> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 235, 235, 235),
+        color: Color(0xFFE3F2FD),
         borderRadius: BorderRadius.circular(12.0),
       ),
       width: 500,
       padding: EdgeInsets.all(16.0),
-      child: Text(
-          widget.input ?? 'insira um nome',
-          style: const TextStyle(
-            color: Color.fromARGB(255, 99, 99, 99),
-          ),
+      child: 
+        Row(
+          children: [
+            const Icon(Icons.search),
+            const SizedBox(width: 15),
+            Text(
+              widget.input ?? 'insira um nome',
+              style: const TextStyle(
+                color: Color.fromARGB(255, 99, 99, 99),
+              ),
+            ),
+          ],
         ),
       );
   }
