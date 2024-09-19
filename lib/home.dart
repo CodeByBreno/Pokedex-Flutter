@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/auxiliary.dart';
 import 'package:my_first_app/Widgets/Utils/title.dart';
 import 'package:my_first_app/Widgets/pokemon_grid.dart';
 import 'package:my_first_app/Widgets/Utils/input_text.dart';

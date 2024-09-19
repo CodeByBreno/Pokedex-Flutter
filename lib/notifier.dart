@@ -20,6 +20,7 @@ class PageNotifier extends ChangeNotifier {
   void setPage(int page) {
     if (_currentPage != page) {
       _currentPage = page;
+      notifyListeners();
       fetchData();
     }
   }

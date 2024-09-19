@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/auxiliary.dart';
+import 'package:my_first_app/Widgets/PokemonDetails/pokemons_details_header_type.dart';
 
 class PokemonsDetaisHeader extends StatelessWidget{
   final String name;
@@ -31,12 +32,7 @@ class PokemonsDetaisHeader extends StatelessWidget{
             Row (
               children: 
                 types.map((type) => [
-                          Text(
-                            type,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                            )), 
+                          PokemonDetailsHeaderType(type: type),
                           const SizedBox(width: 5),
                           ])
                       .expand((widgetList) => widgetList)

@@ -64,11 +64,45 @@ Color getColorFromType(String type){
       return Color.fromARGB(255, 118, 189, 254);
     case 'grass':
       return Color.fromARGB(255, 70, 209, 177);
+    case 'bug':
+      return Color.fromARGB(255, 143, 180, 51);
+    case 'electric':
+      return Color.fromARGB(255, 255, 191, 43);
+    case 'poison':
+      return Color.fromARGB(255, 144, 60, 255);
+    case 'dark':
+      return Color.fromARGB(255, 82, 82, 82);
+    case 'psychic':
+      return Color.fromARGB(255, 255, 82, 212);
+    case 'ground':
+      return Color.fromARGB(255, 205, 183, 38);
+    case 'ghost':
+      return Color.fromARGB(255, 105, 83, 227);
+    case 'rock': 
+      return Color.fromARGB(255, 99, 99, 99);
+    case 'fairy':
+      return Color.fromARGB(255, 255, 175, 220);
+    case 'normal':
+      return Color.fromARGB(255, 193, 193, 193);
+    case 'ice':
+      return Color.fromARGB(255, 111, 224, 255);
+    case 'fighting':
+      return Color.fromARGB(255, 185, 65, 65);
+    case 'flying':
+      return Color.fromRGBO(134, 132, 106, 1);
+    case 'dragon':
+      return Color.fromARGB(255, 176, 123, 195);
+    case 'steel':
+      return Color.fromARGB(255, 152, 183, 185);
     default:
-      return Color.fromARGB(255, 255, 248, 189);
+      return Colors.grey;
   }
 }
 
 Color lightenColor(Color color, [double amount = 0.3]) {
   return Color.lerp(color, Colors.white, amount)!;
+}
+
+Color darkenColor(Color color, [double amount = 0.08]) {
+  return Color.lerp(color, Colors.black, amount)!;
 }
