@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                   Column(
                     children: [
                       MyTitle(),
-                      const InputText(input: 'Pesquise pelo nome do pokemon'),
+                      const InputText(),
                       const SizedBox(height: 10,),
                       const Expanded(child: 
                         PokemonGrid()),
