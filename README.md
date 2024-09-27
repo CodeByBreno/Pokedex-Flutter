@@ -6,13 +6,11 @@ Recentemente, comecei a configurar um repositório de acesso a um banco de dados
 Ainda falta dar uma trabalhada em várias coisas, criar um sistema de favoritos, terminar de apresentar os dados de cada pokemon em uma página própria, etc. É um projeto em andamento que eu estou desenvolvendo como hobby.
 
 <strong>Versão Atual do Projeto </strong>
-<p>
-<img src="https://github.com/user-attachments/assets/7f07972c-ed8a-4a2f-bfc0-65c5bfb59788" width=400>
-<img src="https://github.com/user-attachments/assets/50c255eb-835a-4f6a-b706-737b7e3a8a98" width=400>
-</p>
-<p>
-<img src="https://github.com/user-attachments/assets/d34edd56-daef-4f89-9021-4d31b0545795" width=400>
-<img src="https://github.com/user-attachments/assets/64b62141-6398-4250-afb4-9713083557ca" width=400>
+<p margin=auto>
+<img src="https://github.com/user-attachments/assets/7f07972c-ed8a-4a2f-bfc0-65c5bfb59788" width=240>
+<img src="https://github.com/user-attachments/assets/50c255eb-835a-4f6a-b706-737b7e3a8a98" width=240>
+<img src="https://github.com/user-attachments/assets/d34edd56-daef-4f89-9021-4d31b0545795" width=240>
+<img src="https://github.com/user-attachments/assets/64b62141-6398-4250-afb4-9713083557ca" width=240>
 </p>
 
 # ⚙️ Como Executar o Projeto?
@@ -28,15 +26,16 @@ Quando o projeto estiver mais avançado vou gerar um APK certinho. Até tem um n
 
 <h2><Strong>Versão inicial do projeto, sem busca de dados na API ainda: </Strong></h2>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8e56d996-f22c-458b-9870-9e82cefb1cef" width="800" alt="img_inicial_projeto">
+  <img src="https://github.com/user-attachments/assets/8e56d996-f22c-458b-9870-9e82cefb1cef" width="300" alt="img_inicial_projeto">
 </p>
 
 <h2><Strong>Versão já com os dados da API remota</Strong></h2>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/5a742dd3-9cc0-4efe-b2dc-9a8cadae91ac" width="800" alt="img_pokemons_api">
+  <img src="https://github.com/user-attachments/assets/5a742dd3-9cc0-4efe-b2dc-9a8cadae91ac" width="300" alt="img_pokemons_api">
 </p>
 
-<h2><Strong>Primeira versão estável. Essa é a que foi entregue como trabalho de ES3. Feita em +/- dois dias (com muitas pausas, porque tive aula e outras coisas no meio tempo kakaka)</Strong></h2>
+<h2><Strong>Primeira versão estável</Strong></h2>
+<p>Essa é a que foi entregue como trabalho de ES3. Feita em +/- dois dias (com muitas pausas, porque tive aula e outras coisas no meio tempo kakaka)</p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/537ba8fa-2459-4c36-87d6-63ec23442735" width="800" alt="versao_1_pokedex">
+  <img src="https://github.com/user-attachments/assets/537ba8fa-2459-4c36-87d6-63ec23442735" width="300" alt="versao_1_pokedex">
 </p>
