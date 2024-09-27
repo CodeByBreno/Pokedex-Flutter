@@ -1,5 +1,6 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:my_first_app/Database/creation_querys.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper _instance = DatabaseHelper._internal();
@@ -24,11 +25,12 @@ class DatabaseHelper {
       version: 1,
       onCreate: (db, version) {
         return db.execute(
-          ''' 
-            CREATE TABLE pokemons (
-              id UUID PRIMARY KEY,
-              name TEXT NOT NULL
-            )
+          '''
+            $pokemonTable
+            $typeTable
+            $evolutionLineTable
+            $pokemonTypeTable
+            $pokemonEvolutionLineTable
           '''
         );
       }
