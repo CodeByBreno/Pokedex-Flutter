@@ -7,6 +7,7 @@ class PokemonModel {
   final double? height;
   final double? weight;
   final int? generation;
+  final bool? favorite;
 
 
   PokemonModel({
@@ -17,19 +18,35 @@ class PokemonModel {
     this.imageDefault,
     this.height,
     this.weight,
-    this.generation
+    this.generation,
+    this.favorite = false,
   });
 
   Map<String, dynamic> toMap() {
     return {
-      'id_pokemon': idPokemon,
+      'idPokemon': idPokemon,
       'name': name,
       'url': url,
       'image_url': imageUrl,
       'image_default': imageDefault,
       'height': height,
       'weight': weight,
-      'generation': generation
+      'generation': generation,
+      'favorite': favorite
     };
+  }
+
+  factory PokemonModel.fromMap(Map<String, dynamic> map) {
+    return PokemonModel(
+      idPokemon: map['idPokemon'],
+      name: map['name'],
+      url: map['url'],
+      imageUrl: map['imageUrl'],
+      imageDefault: map['imageDefault'],
+      height: map['height'],
+      weight: map['weight'],
+      generation: map['generation'],
+      favorite: map['favorite']
+    );
   }
 }
