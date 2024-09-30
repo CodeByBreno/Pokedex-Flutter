@@ -1,5 +1,7 @@
 class EvolutionLineTable {  
   final String idEvolutionLineTable;
+  
+  static const String table = 'evolutionLine';
 
   EvolutionLineTable({
     required this.idEvolutionLineTable,

@@ -4,6 +4,8 @@ class PokemonEvolutionLineModel {
   final String evolutionLineId;
   final int position;
 
+  static const String table = 'pokemonEvolutionLine';
+
   PokemonEvolutionLineModel({
     required this.idPokemonEvolutionLineModel,
     required this.pokemonId,

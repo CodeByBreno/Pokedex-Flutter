@@ -3,6 +3,8 @@ class TypeModel {
   final String name;
   final String? imageUrl;
 
+  static const String table = 'type';
+
   TypeModel({
     required this.idType,
     required this.name,

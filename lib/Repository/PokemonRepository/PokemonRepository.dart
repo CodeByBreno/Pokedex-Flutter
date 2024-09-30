@@ -48,7 +48,7 @@ class PokemonRepository implements IPokemonRepository{
   Future<int> save(PokemonModel pokemon) async {
     _ensureInicialized();
   
-    final index = await _db!.insert('pokemon', pokemon.toMap());
+    final index = await _db!.insert(PokemonModel.table, pokemon.toMap());
 
     return index;
   }
@@ -58,9 +58,9 @@ class PokemonRepository implements IPokemonRepository{
     _ensureInicialized();
 
     final index = await _db!.update(
-      'pokemon', 
+      PokemonModel.table, 
       pokemon.toMap(),
-      where: 'id_pokemon = ?',
+      where: 'idPokemon = ?',
       whereArgs: [pokemon.idPokemon]);
 
     return index;
@@ -71,8 +71,8 @@ class PokemonRepository implements IPokemonRepository{
     _ensureInicialized();
 
     final pokemon = await _db!.query(
-      'pokemon',
-      where: 'id_pokemon = ?',
+      PokemonModel.table,
+      where: 'idPokemon = ?',
       whereArgs: [id],
     );
 
@@ -86,7 +86,7 @@ class PokemonRepository implements IPokemonRepository{
     _ensureInicialized();
 
     final pokemons = await _db!.query(
-      'pokemon',
+      PokemonModel.table,
       where: 'name LIKE ?',
       whereArgs: ['%$name%'],
     );
@@ -99,7 +99,7 @@ class PokemonRepository implements IPokemonRepository{
     _ensureInicialized();
 
     final pokemons = await _db!.query(
-      'pokemon',
+      PokemonModel.table,
       where: 'favorite = 1',
     );
 
@@ -111,8 +111,8 @@ class PokemonRepository implements IPokemonRepository{
     _ensureInicialized();
 
     final result = await _db!.delete(
-      'pokemon',
-      where: 'id_pokemon = ?',
+      PokemonModel.table,
+      where: 'idPokemon = ?',
       whereArgs: [id]
     );
 

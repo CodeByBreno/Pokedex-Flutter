@@ -9,6 +9,7 @@ class PokemonModel {
   final int? generation;
   final bool? favorite;
 
+  static const String table = 'pokemon';
 
   PokemonModel({
     required this.idPokemon,

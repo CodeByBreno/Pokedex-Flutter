@@ -3,6 +3,8 @@ class PokemonTypeModel {
   final String pokemonId;
   final String typeId;
 
+  static const String table = 'pokemonType';
+
   PokemonTypeModel({
     required this.idPokemonType,
     required this.pokemonId,
