@@ -1,6 +1,6 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:my_first_app/Database/creation_querys.dart';
+import 'package:my_first_app/Backend/Database/creation_querys.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper _instance = DatabaseHelper._internal();

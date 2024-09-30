@@ -1,8 +1,8 @@
 import 'package:uuid/uuid.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:my_first_app/Models/TypeModel.dart';
-import 'package:my_first_app/Database/database_helper.dart';
-import 'package:my_first_app/Repository/TypesRepository/ITypesRepository.dart';
+import 'package:my_first_app/Backend/Models/TypeModel.dart';
+import 'package:my_first_app/Backend/Database/database_helper.dart';
+import 'package:my_first_app/Backend/Repository/TypesRepository/ITypesRepository.dart';
 
 class TypesRepository implements ITypesRepository {
   Database? _db;

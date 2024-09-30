@@ -1,8 +1,8 @@
 import 'package:uuid/uuid.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:my_first_app/Database/database_helper.dart';
-import 'package:my_first_app/Models/EvolutionLineModel.dart';
-import 'package:my_first_app/Repository/EvolutionLineRepository/IEvolutionLineRepository.dart';
+import 'package:my_first_app/Backend/Database/database_helper.dart';
+import 'package:my_first_app/Backend/Models/EvolutionLineModel.dart';
+import 'package:my_first_app/Backend/Repository/EvolutionLineRepository/IEvolutionLineRepository.dart';
 
 class EvolutionLineRepository implements IEvolutionLineRepository{
   Database? _db;

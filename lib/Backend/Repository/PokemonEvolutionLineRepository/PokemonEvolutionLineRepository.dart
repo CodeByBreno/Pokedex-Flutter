@@ -1,8 +1,8 @@
 import 'package:uuid/uuid.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:my_first_app/Database/database_helper.dart';
-import 'package:my_first_app/Models/PokemonEvolutionLineModel.dart';
-import 'package:my_first_app/Repository/PokemonEvolutionLineRepository/IPokemonEvolutionLineRepository.dart';
+import 'package:my_first_app/Backend/Database/database_helper.dart';
+import 'package:my_first_app/Backend/Models/PokemonEvolutionLineModel.dart';
+import 'package:my_first_app/Backend/Repository/PokemonEvolutionLineRepository/IPokemonEvolutionLineRepository.dart';
 
 class PokemonEvolutionLineRepository implements IPokemonEvolutionLineRepository
 {

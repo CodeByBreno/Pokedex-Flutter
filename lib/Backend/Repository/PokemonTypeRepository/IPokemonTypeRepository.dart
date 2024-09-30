@@ -1,4 +1,4 @@
-import 'package:my_first_app/Models/PokemonTypeModel.dart';
+import 'package:my_first_app/Backend/Models/PokemonTypeModel.dart';
 
 abstract class IPokemonTypeRepository{
   Future<void> init();

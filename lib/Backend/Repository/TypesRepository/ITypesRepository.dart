@@ -1,4 +1,5 @@
-import 'package:my_first_app/Models/TypeModel.dart';
+import 'package:my_first_app/Backend/Models/TypeModel.dart';
+
 
 abstract class ITypesRepository {
   Future<void> init();

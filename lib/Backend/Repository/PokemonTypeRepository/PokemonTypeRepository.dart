@@ -1,8 +1,8 @@
 import 'package:uuid/uuid.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:my_first_app/Models/PokemonTypeModel.dart';
-import 'package:my_first_app/Database/database_helper.dart';
-import 'package:my_first_app/Repository/PokemonTypeRepository/IPokemonTypeRepository.dart';
+import 'package:my_first_app/Backend/Models/PokemonTypeModel.dart';
+import 'package:my_first_app/Backend/Database/database_helper.dart';
+import 'package:my_first_app/Backend/Repository/PokemonTypeRepository/IPokemonTypeRepository.dart';
 
 class PokemonTypeRepository extends IPokemonTypeRepository {
   Database? _db;

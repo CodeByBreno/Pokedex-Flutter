@@ -1,33 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/app.dart';
 import 'package:provider/provider.dart';
-import 'package:my_first_app/routes.dart';
 import 'package:my_first_app/notifier.dart';
+import 'package:my_first_app/Backend/Config/container.dart';
 
-const ITEMS_PER_PAGE = 15;
-const CACHE_PAGES = 3;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  setupDependencies();
 
-void main() {
+  final result = await initializeRepositories();
+
+  if (!result) {
+    throw Exception('Erro ao inicializar banco e repositórios');
+  }
+
   runApp(
     ChangeNotifierProvider(
       create: (context) => PageNotifier(),
-      child: MyApp(),
+      child: App(),
   ));
-}
-
-class MyApp extends StatefulWidget {
-  @override
-  MyAppState createState() => MyAppState();
-}
-
-class MyAppState extends State<MyApp> {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pokedex',
-      initialRoute: '/',
-      routes: routes(context),
-      debugShowCheckedModeBanner: false,
-    );
-  }
 }

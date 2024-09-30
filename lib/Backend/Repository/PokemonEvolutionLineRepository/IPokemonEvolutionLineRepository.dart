@@ -1,4 +1,4 @@
-import 'package:my_first_app/Models/PokemonEvolutionLineModel.dart';
+import 'package:my_first_app/Backend/Models/PokemonEvolutionLineModel.dart';
 
 abstract class IPokemonEvolutionLineRepository {
   Future<void> init();
