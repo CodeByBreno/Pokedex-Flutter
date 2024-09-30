@@ -16,6 +16,7 @@ class PokemonRepository implements IPokemonRepository{
   @override
   Future<void> init() async {
     _db = await DatabaseHelper().database;
+    _ensureInicialized();
   }
 
   @override
@@ -46,8 +47,6 @@ class PokemonRepository implements IPokemonRepository{
 
   @override
   Future<int> save(PokemonModel pokemon) async {
-    _ensureInicialized();
-  
     final index = await _db!.insert(PokemonModel.table, pokemon.toMap());
 
     return index;
@@ -55,8 +54,6 @@ class PokemonRepository implements IPokemonRepository{
 
   @override
   Future<int> update(PokemonModel pokemon) async {
-    _ensureInicialized();
-
     final index = await _db!.update(
       PokemonModel.table, 
       pokemon.toMap(),
@@ -68,8 +65,6 @@ class PokemonRepository implements IPokemonRepository{
 
   @override
   Future<PokemonModel?> findById(String id) async {
-    _ensureInicialized();
-
     final pokemon = await _db!.query(
       PokemonModel.table,
       where: 'idPokemon = ?',
@@ -83,8 +78,6 @@ class PokemonRepository implements IPokemonRepository{
 
   @override
   Future<List<PokemonModel>> findByName(String name) async {
-    _ensureInicialized();
-
     final pokemons = await _db!.query(
       PokemonModel.table,
       where: 'name LIKE ?',
@@ -96,8 +89,6 @@ class PokemonRepository implements IPokemonRepository{
 
   @override
   Future<List<PokemonModel>> findFavorites() async {
-    _ensureInicialized();
-
     final pokemons = await _db!.query(
       PokemonModel.table,
       where: 'favorite = 1',
@@ -108,8 +99,6 @@ class PokemonRepository implements IPokemonRepository{
 
   @override
   Future<bool> delete(String id) async {
-    _ensureInicialized();
-
     final result = await _db!.delete(
       PokemonModel.table,
       where: 'idPokemon = ?',

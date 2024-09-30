@@ -16,6 +16,7 @@ class PokemonTypeRepository extends IPokemonTypeRepository {
   @override
   Future<void> init() async {
     _db = await DatabaseHelper().database;
+    _ensureInicialized();
   }
 
   @override
@@ -33,8 +34,6 @@ class PokemonTypeRepository extends IPokemonTypeRepository {
 
   @override
   Future<int> save(PokemonTypeModel pokemonType) async {
-    _ensureInicialized();
-
     final index = await _db!.insert('pokemonType', pokemonType.toMap());
 
     return index;
@@ -42,8 +41,6 @@ class PokemonTypeRepository extends IPokemonTypeRepository {
 
   @override
   Future<int> update(PokemonTypeModel pokemonType) async {
-    _ensureInicialized();
-
     final index = await _db!.update(
       PokemonTypeModel.table,
       pokemonType.toMap(),
@@ -55,8 +52,6 @@ class PokemonTypeRepository extends IPokemonTypeRepository {
 
   @override
   Future<PokemonTypeModel?> findById(String id) async {
-    _ensureInicialized();
-
     final pokemonType = await _db!.query(
       PokemonTypeModel.table,
       where: 'idPokemonType = ?',
@@ -70,8 +65,6 @@ class PokemonTypeRepository extends IPokemonTypeRepository {
 
   @override
   Future<bool> delete(String id) async {
-    _ensureInicialized();
-
     final result = await _db!.delete(
       PokemonTypeModel.table,
       where: 'idPokemonType = ?',

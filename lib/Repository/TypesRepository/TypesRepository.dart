@@ -16,6 +16,7 @@ class TypesRepository implements ITypesRepository {
   @override
   Future<void> init() async {
     _db = await DatabaseHelper().database;
+    _ensureInicialized();
   }
 
   @override
@@ -33,8 +34,6 @@ class TypesRepository implements ITypesRepository {
 
   @override
   Future<int> save(TypeModel type) async {
-    _ensureInicialized();
-
     final index = await _db!.insert(TypeModel.table, type.toMap());
 
     return index;
@@ -42,8 +41,6 @@ class TypesRepository implements ITypesRepository {
 
   @override
   Future<int> update(TypeModel type) async {
-    _ensureInicialized();
-
     final index = await _db!.update(
       TypeModel.table, 
       type.toMap(),
@@ -55,8 +52,6 @@ class TypesRepository implements ITypesRepository {
 
   @override
   Future<TypeModel?> findById(String id) async {
-    _ensureInicialized();
-
     final type = await _db!.query(
       TypeModel.table,
       where: 'idType = ?',
@@ -70,8 +65,6 @@ class TypesRepository implements ITypesRepository {
 
   @override
   Future<List<TypeModel>> getTypeByName(String name) async {
-    _ensureInicialized();
-
     List<Map<String, dynamic>> types = await _db!.query(
       TypeModel.table,
       where: 'name LIKE ?',
@@ -83,8 +76,6 @@ class TypesRepository implements ITypesRepository {
 
   @override
   Future<bool> containsTypeByName(String name) async {
-    _ensureInicialized();
-
     List<Map<String, dynamic>> result = await _db!.query(
       TypeModel.table,
       where: 'name = ?',
@@ -97,8 +88,6 @@ class TypesRepository implements ITypesRepository {
 
   @override
   Future<bool> delete(String id) async {
-    _ensureInicialized();
-
     final result = await _db!.delete(
       TypeModel.table,
       where: 'idType = ?',

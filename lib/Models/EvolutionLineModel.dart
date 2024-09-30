@@ -1,20 +1,20 @@
-class EvolutionLineTable {  
-  final String idEvolutionLineTable;
+class EvolutionLineModel {  
+  final String idEvolutionLine;
   
   static const String table = 'evolutionLine';
 
-  EvolutionLineTable({
-    required this.idEvolutionLineTable,
+  EvolutionLineModel({
+    required this.idEvolutionLine,
   });
 
   Map<String, dynamic> toMap() {
     return {
-      'idEvolutionLine': idEvolutionLineTable,
+      'idEvolutionLine': idEvolutionLine,
     };
   }
 
-  factory EvolutionLineTable.fromMap(Map<String, dynamic> map) {
-    return EvolutionLineTable(
-      idEvolutionLineTable: map['idEvolutionLineTable'],);
+  factory EvolutionLineModel.fromMap(Map<String, dynamic> map) {
+    return EvolutionLineModel(
+      idEvolutionLine: map['idEvolutionLineTable'],);
   }
 }

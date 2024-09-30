@@ -1,5 +1,5 @@
 class PokemonEvolutionLineModel {
-  final String idPokemonEvolutionLineModel;
+  final String idPokemonEvolutionLine;
   final String pokemonId;
   final String evolutionLineId;
   final int position;
@@ -7,7 +7,7 @@ class PokemonEvolutionLineModel {
   static const String table = 'pokemonEvolutionLine';
 
   PokemonEvolutionLineModel({
-    required this.idPokemonEvolutionLineModel,
+    required this.idPokemonEvolutionLine,
     required this.pokemonId,
     required this.evolutionLineId,
     required this.position
@@ -15,7 +15,7 @@ class PokemonEvolutionLineModel {
 
   Map<String, dynamic> toMap() {
     return {
-      'idPokemonEvolutionLineModel': idPokemonEvolutionLineModel,
+      'idPokemonEvolutionLineModel': idPokemonEvolutionLine,
       'pokemonId': pokemonId,
       'evolutionLineId': evolutionLineId,
       'position': position,
@@ -24,7 +24,7 @@ class PokemonEvolutionLineModel {
 
   factory PokemonEvolutionLineModel.fromMap(Map<String, dynamic> map) {
     return PokemonEvolutionLineModel(
-      idPokemonEvolutionLineModel: map['idPokemonEvolutionLineModel'],
+      idPokemonEvolutionLine: map['idPokemonEvolutionLineModel'],
       pokemonId: map['pokemonId'],
       evolutionLineId: map['evolutionLineId'],
       position: map['position'],
