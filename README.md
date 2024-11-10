@@ -10,7 +10,6 @@ Ainda falta dar uma trabalhada em várias coisas, criar um sistema de favoritos,
 <img src="https://github.com/user-attachments/assets/7f07972c-ed8a-4a2f-bfc0-65c5bfb59788" width=240>
 <img src="https://github.com/user-attachments/assets/50c255eb-835a-4f6a-b706-737b7e3a8a98" width=240>
 <img src="https://github.com/user-attachments/assets/d34edd56-daef-4f89-9021-4d31b0545795" width=240>
-<img src="https://github.com/user-attachments/assets/64b62141-6398-4250-afb4-9713083557ca" width=240>
 </p>
 
 # ⚙️ Como Executar o Projeto?
