@@ -16,8 +16,8 @@ Ainda falta dar uma trabalhada em várias coisas, criar um sistema de favoritos,
 
 Tendo flutter instalado no seu computador, basta abrir o código em um editor (ou abrir um terminal na pasta) e seguir os seguintes passos:
 
-1 - Fazer download das dependências do projeto executando "flutter pub get"
-2 - Executar o projeto com "flutter run"
+1 - Fazer download das dependências do projeto executando "flutter pub get"<br>
+2 - Executar o projeto com "flutter run"<br>
 
 Quando o projeto estiver mais avançado vou gerar um APK certinho. Até tem um na pasta Android/, mas ele está um pouco datado já (foi o que entreguei como trabalho de ES3)
 
