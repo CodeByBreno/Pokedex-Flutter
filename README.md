@@ -23,7 +23,7 @@ Quando o projeto estiver mais avançado vou gerar um APK certinho. Até tem um n
 
 # 🖼️Versões Anteriores do Projeto
 
-<h2><Strong>Versão inicial do projeto, sem busca de dados na API ainda: </Strong></h2>
+<h2><Strong>Versão inicial do projeto: </Strong></h2>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8e56d996-f22c-458b-9870-9e82cefb1cef" width="300" alt="img_inicial_projeto">
 </p>
