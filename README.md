@@ -6,7 +6,7 @@ Recentemente, comecei a configurar um repositório de acesso a um banco de dados
 Ainda falta dar uma trabalhada em várias coisas, criar um sistema de favoritos, terminar de apresentar os dados de cada pokemon em uma página própria, etc. É um projeto em andamento que eu estou desenvolvendo como hobby.
 
 <strong>Versão Atual do Projeto </strong>
-<p margin=auto>
+<p align="center">
 <img src="https://github.com/user-attachments/assets/7f07972c-ed8a-4a2f-bfc0-65c5bfb59788" width=240>
 <img src="https://github.com/user-attachments/assets/50c255eb-835a-4f6a-b706-737b7e3a8a98" width=240>
 <img src="https://github.com/user-attachments/assets/d34edd56-daef-4f89-9021-4d31b0545795" width=240>
